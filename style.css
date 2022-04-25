@@ -5,7 +5,6 @@
 }
 
 .color {
-    background-color: rgb(255, 0, 0);
     border: 1px solid black;
     width: 47.5px;
     height: 47.5px;
@@ -13,16 +12,20 @@
 }
 
 #black {
-    background-color: rgb(0, 0, 0);
+    background-color: black;
 }
 
 
 #purple {
-    background-color: rgb(117, 0, 196);
+    background-color: purple;
 }
 
 #green {
-    background-color: rgb(0, 255, 115);
+    background-color: green;
+}
+
+#red {
+    background-color: red;
 }
 
 #pixel-board {

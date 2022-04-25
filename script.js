@@ -1,1 +1,6 @@
-document.write("This is written from JavaScript");
+/*function pixelsCreat(){
+    
+    let divCreator = document.querySelector(".pixel") * 25;
+    
+    pixelsCreator.innerText = divCreator;
+    }*/
