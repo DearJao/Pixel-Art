@@ -15,24 +15,26 @@ for (let btn of colorsButtons) {
     btn.addEventListener('click', changeColors)
 }
 
-function paint(event) {
-    const currentSelected = document.querySelector('.selected')
-    event.target.style.backgroundColor = currentSelected.style.backgroundColor;
+const pixels = document.querySelectorAll('.pixel');
+
+for (pixelsCount = 0; pixelsCount < pixels.length; pixelsCount += 1) {
+  pixels[pixelsCount].addEventListener('click', pixelSelected);
 }
 
+function pixelSelected(event) {
+  let selectedColor = document.querySelector('.selected');
+  let activeColor = window.getComputedStyle(selectedColor);
+  let bgColor = activeColor.getPropertyValue('background-color');
+  event.target.style.backgroundColor = bgColor;
+}
 
 //cria pixel 
 function createPixels(pixels){
     for  (let index = 0; index < pixels * pixels; index += 1) {
         const newDiv = document.createElement('div');
         newDiv.className = 'pixel';
-        newDiv.addEventListener('click', paint)
+        newDiv.addEventListener('click', pixelSelected);
         pixelBoard.appendChild(newDiv);
     }
 }
 createPixels(5)
-
-
-
-// sudo add-apt-repository ppa:libratbag-piper/piper-libratbag-git
-
