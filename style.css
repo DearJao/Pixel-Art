@@ -5,16 +5,15 @@
 }
 
 #color-palette {
-    width: 1px;
-    height: 1px;
-    background-color: red;
+    width: 205px;
+    height: 55px;
+    display: flex;
 }
 
 .color {
     border: 1px solid black;
     width: 47.5px;
     height: 47.5px;
-    display: inline-block;
 }
 
 #black {
@@ -48,7 +47,13 @@
     width: 40px;
     height: 40px;
     display: inline-block;
-    padding: 3px;
+    padding: 1px;
+    padding-left: 5px;
+    padding-top: 2px; 
+}
+
+#clear-board {
+    padding: 4px;
 }
 
 
