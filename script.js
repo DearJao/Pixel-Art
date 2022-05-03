@@ -14,7 +14,7 @@ function changeColors(event) {
 for (let btn of colorsButtons) {
     btn.addEventListener('click', changeColors)
 }
-
+//pinta os pixels
 const pixels = document.querySelectorAll('.pixel');
 
 for (pixelsCount = 0; pixelsCount < pixels.length; pixelsCount += 1) {
@@ -22,11 +22,21 @@ for (pixelsCount = 0; pixelsCount < pixels.length; pixelsCount += 1) {
 }
 
 function pixelSelected(event) {
-  let selectedColor = document.querySelector('.selected');
-  let activeColor = window.getComputedStyle(selectedColor);
-  let bgColor = activeColor.getPropertyValue('background-color');
+  const selectedColor = document.querySelector('.selected');
+  const activeColor = window.getComputedStyle(selectedColor);
+  const bgColor = activeColor.getPropertyValue('background-color');
   event.target.style.backgroundColor = bgColor;
 }
+
+// limpa o quadro
+let clearBoard = document.querySelector('#clear-board');
+  clearBoard.addEventListener('click', function () {
+    const pixelsColors = document.querySelectorAll('.pixel');
+      for (let i = 0; i < pixelsColors.length; i +=1){
+        pixelsColors[i].style.backgroundColor = 'white';
+      }
+    }
+  );
 
 //cria pixel 
 function createPixels(pixels){
@@ -34,6 +44,7 @@ function createPixels(pixels){
         const newDiv = document.createElement('div');
         newDiv.className = 'pixel';
         newDiv.addEventListener('click', pixelSelected);
+        // newDiv.addEventListener('click', clear)
         pixelBoard.appendChild(newDiv);
     }
 }
